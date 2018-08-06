@@ -13,12 +13,12 @@ services:
       - -credential_file=/config
     networks:
       - internal_network
+      - external_network
   redis:
     restart: always
     image: redis:4.0-alpine
     networks:
       - internal_network
-      - external_network
     volumes:
      - ./redis:/data
   web:
